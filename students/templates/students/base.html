@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Student Management System{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #253047;
+        }
+        nav {
+            background: #173b70;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        nav a { color: white; text-decoration: none; margin-right: 14px; }
+        nav strong { font-size: 20px; }
+        main { max-width: 1100px; margin: 35px auto; padding: 0 18px; }
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 3px 14px #0000000d;
+            margin-bottom: 22px;
+        }
+        .btn {
+            display: inline-block;
+            border: 0;
+            border-radius: 6px;
+            padding: 10px 15px;
+            background: #2458a6;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .danger { background: #c0392b; }
+        .secondary { background: #68778d; }
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin: 7px 0 16px;
+            border: 1px solid #ccd4e0;
+            border-radius: 6px;
+        }
+        label { font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td {
+            text-align: left;
+            padding: 12px 9px;
+            border-bottom: 1px solid #e4e9f0;
+        }
+        th { background: #eef3fa; }
+        .table-wrap { overflow-x: auto; }
+        .actions a { margin: 3px; }
+        .errorlist { color: #c0392b; }
+        footer { text-align: center; padding: 25px; color: #68778d; }
+        @media (max-width: 650px) {
+            nav { align-items: flex-start; flex-direction: column; }
+            th, td { padding: 9px 6px; font-size: 13px; }
+            .card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>Student Management System</strong>
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'add_student' %}">Add Student</a>
+            <a href="/admin/">Admin</a>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>Student Management System | Built with Python and Django</footer>
+</body>
+</html>

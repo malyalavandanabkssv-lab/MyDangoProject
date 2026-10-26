@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+<body>
+    <h1>Student Management System</h1>
+
+    <a href="/add/">Register a Student</a>
+
+    <h2>Registered Students</h2>
+
+    {% for student in students %}
+        <p>{{ student.name }} — {{ student.email }}</p>
+    {% empty %}
+        <p>No students registered yet.</p>
+    {% endfor %}
+</body>
+</html>
